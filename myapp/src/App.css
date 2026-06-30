@@ -1,0 +1,1093 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Segoe UI",sans-serif;
+}
+
+body{
+  background:#ffffff;
+  overflow-y: auto;
+}
+
+.App{
+  min-height:100vh;
+  padding:12px 15px;
+  overflow-x: hidden;
+}
+
+.dashboard-shell{
+  width:100%;
+  max-width:1400px;
+  margin:auto;
+}
+
+.dashboard-header{
+  background:linear-gradient(90deg,#282b42,#486dc4);
+  color:white;
+  padding:14px 24px;
+  border-radius:5px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:18px;
+}
+
+.dashboard-title{
+  font-size:22px;
+  font-weight:700;
+  margin:0;
+  color: white;
+  text-align:left;
+}
+
+.logout-button{
+  background:white;
+  color:#163491;
+  border:none;
+  border-radius:5px;
+
+  padding:7px 18px;
+  font-size:14px;
+  font-weight:600;
+
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.logout-button:hover{
+  opacity:0.9;
+}
+
+/* =========================
+   TOP CONTROLS
+========================= */
+
+.dashboard-controls-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap: wrap;
+
+  gap:15px;
+  margin-bottom:10px;
+}
+
+.field-group{
+  flex:1;
+
+  display:flex;
+  align-items:center;
+  font-size:14px;
+  gap:10px;
+}
+
+.field-group label{
+  font-size:15px;
+  font-weight:600;
+  color:#2f3b59;
+
+  min-width:110px;
+  white-space:nowrap;
+}
+
+.field-group select,
+.field-group input{
+  flex:1;
+
+  height:42px;
+
+  border:1px solid #d7d7d7;
+  border-radius:5px;
+
+  padding:0 12px;
+
+  font-size:14px;
+  outline:none;
+
+  background:white;
+}
+.view-config-btn{
+  background:#163491;
+  color:white;
+  border:none;
+  height:32px;
+  padding:0 12px;
+  border-radius:4px;
+  font-size:15px;
+  font-weight:600;
+  cursor:pointer;
+  margin:0 !important;
+  width:auto;
+}
+.view-config-container{
+  position: relative;
+  margin-left: auto !important;
+  display: flex;
+  align-items: center;
+}
+.history-count{
+  margin-left:10px;
+  font-size:14px;
+  font-weight:600;
+  color:#163491;
+}
+.view-config-btn:hover{
+  opacity:0.9;
+}
+
+.agent-history{
+  position:absolute;
+  top:42px;
+  right:0;
+
+  width:380px;
+  max-height:160px;
+
+  overflow-y:auto;
+  overflow-x:hidden;
+
+  background:white;
+  border:1px solid #dbe4ff;
+  border-radius:3px;
+
+  box-shadow:0 6px 16px rgba(0,0,0,0.15);
+
+  z-index:999;
+}
+.agent-history div{
+  padding:12px;
+  border-bottom:1px solid #e5e7eb;
+  font-size:13px;
+  color:#334155;
+  white-space:nowrap;
+}
+
+.agent-history div:last-child{
+  border-bottom:none;
+}
+
+.agent-history div:hover{
+  background:#f4f7ff;
+}
+.agent-history::-webkit-scrollbar{
+  width:6px;
+}
+
+.agent-history::-webkit-scrollbar-thumb{
+  background:#163491;
+  border-radius:10px;
+}
+
+.agent-history::-webkit-scrollbar-track{
+  background:#f1f5f9;
+}
+
+.agent-history::-webkit-scrollbar-thumb{
+  background:#163491;
+  border-radius:10px;
+}
+
+.agent-history::-webkit-scrollbar-track{
+  background:#f1f5f9;
+}
+.workflow-section{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-left:auto;
+  white-space:nowrap;
+}
+
+.workflow-label{
+  color: #163491;
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  padding-right: 12px;
+}
+
+.workflow-label::after{
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2px;
+  height: 20px;
+  background: #d1d9ee;
+}
+.view-config-container{
+  position: relative;
+}
+/* =========================
+   EMAIL SECTION
+========================= */
+
+.email-section{
+  margin-bottom:18px;
+}
+
+.email-section label{
+  display:block;
+  align: left;
+  font-size:15px;
+  font-weight:600;
+
+  margin-bottom:8px;
+
+  color:#2f3b59;
+}
+
+.email-section input{
+  width:100%;
+
+  height:44px;
+
+  border:1px solid #d7d7d7;
+  border-radius:8px;
+
+  padding:0 14px;
+
+  font-size:14px;
+  outline:none;
+}
+
+/* =========================
+   TEMPLATE SECTION
+========================= */
+
+.template-wrapper{
+  display:flex;
+  gap:18px;
+
+  width:100%;
+}
+
+.template-card{
+  flex:1;
+
+  background:white;
+
+  border:2px solid #e5e5e5;
+  border-radius:12px;
+  padding: 16px;
+
+  min-height:210px;
+
+  cursor:pointer;
+
+  transition:0.3s;
+}
+
+.template-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 5px 14px rgba(0,0,0,0.08);
+}
+
+.active-card{
+  border:2px solid #f4bd3e;
+  background: #fffdf6;
+  box-shadow:0 8px 20px rgba(244,189,62,.18);
+}
+
+.card-header-row{
+  display:flex;
+  align-items:center;
+
+  gap:10px;
+
+  margin-bottom:14px;
+}
+
+.card-header-row input[type="radio"]{
+  width:16px;
+  height:16px;
+}
+
+.card-header-row h3{
+  font-size:18px;
+  color:#b58a2e;
+  font-weight:700;
+  margin:0;
+}
+
+.template-card p{
+  font-size:14px;
+  line-height:1.7;
+  color:#555;
+}
+
+.template-card textarea{
+  width:100%;
+
+  margin-top:14px;
+
+  border:1px solid #d7d7d7;
+  border-radius:8px;
+
+  padding:10px;
+
+  font-size:13px;
+
+  resize:none;
+
+  min-height:70px;
+  outline:none;
+}
+
+.login-card{
+  width: 100%;
+  max-width:400px;
+
+  margin:70px auto;
+
+  background:white;
+
+  padding:32px;
+
+  border-radius:12px;
+
+  box-shadow:0 4px 14px rgba(0,0,0,0.08);
+}
+
+.login-card h2{
+  text-align:center;
+  margin-bottom:20px;
+
+  color:#17389c;
+}
+
+.login-field{
+  margin-bottom:16px;
+}
+
+.login-field label{
+  display:block;
+  margin-bottom:6px;
+
+  font-size:14px;
+  font-weight:600;
+}
+
+.login-field input{
+  width:100%;
+
+  height:44px;
+
+  border:1px solid #d7d7d7;
+  border-radius:8px;
+
+  padding:0 12px;
+
+  font-size:14px;
+}
+
+.login-button{
+  width:100%;
+
+  height:44px;
+
+  border:none;
+  border-radius:8px;
+
+  background:#e4cf2a;
+  color:white;
+
+  font-size:15px;
+  font-weight:600;
+
+  cursor:pointer;
+}
+
+.error-message{
+  background:#ffe3e3;
+  color:#c40000;
+
+  padding:10px;
+  border-radius:8px;
+
+  margin-bottom:14px;
+
+  font-size:14px;
+}
+
+/* =========================
+   MODAL
+========================= */
+
+.modal-overlay{
+  position:fixed;
+  inset:0;
+
+  background:rgba(0,0,0,0.45);
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  padding:14px;
+
+  z-index:999;
+}
+
+.modal-content{
+  background:white;
+
+  width:90%;
+  max-width:1000px;
+
+  border-radius:12px;
+
+  padding:24px;
+
+  position:relative;
+
+  max-height:92vh;
+  overflow-y:auto;
+}
+
+.custom-modal-width,
+.tablewise-modal-width,
+.summary-modal-width {
+  max-width: 1000px ;
+}
+
+.modal-close-button{
+  position:absolute;
+
+  top:12px;
+  right:18px;
+
+  border:none;
+  background:none;
+
+  font-size:28px;
+  cursor:pointer;
+}
+
+.small-field{
+  flex:1.2;
+}
+
+.site-field{
+  flex:0.6;
+}
+
+.plant-field{
+  flex:0.8;
+}
+
+/* ---Time & Save Changes Row --- */
+.time-save-group{
+  flex:1 !important;
+}
+.time-save-row{
+  display:flex !important;
+  align-items:center !important;
+  width:100% !important;
+  gap:12px !important;
+}
+
+.execute-now-button {
+  background: #ffea00;
+  color: #2e2e2e;
+  border: none;
+  height: 32px;
+  padding: 0 12px;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.execute-now-button:hover {
+  background: #ffd30c;
+}
+.time-save-row .model-wrapper{
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex: none !important;
+  gap: 6px !important;
+  width: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.spacer{
+  flex:1 !important;
+}
+.model-select {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: white;
+  font-size: 0.95rem;
+  outline: none;
+  cursor: pointer;
+  margin: 0 !important;
+}
+
+.time-save-row input {
+  flex: 0 0 auto !important;
+  width: 140px !important;
+  margin: 0 !important;
+}
+
+.time-save-row label {
+  display: inline-block !important;
+  width: auto !important;
+  min-width: unset !important;
+  max-width: unset !important;
+  flex: none !important;
+  margin: 0 4px 0 0 !important; 
+  white-space: nowrap !important;
+}
+
+.save-button {
+  background: #ffea00;
+  color: #2e2e2e;
+  border: none;
+  outline: none;
+  height: 32px;
+  padding: 0 12px;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+  flex: none !important;
+  margin: 0 !important;
+}
+
+.save-button:hover {
+  background: #ffd30c;
+}
+
+.compact-summary-box {
+  background: #f4f7ff;
+  border: 1px solid #d7d7d7;
+  border-radius: 8px;
+  padding: 12px 16px;
+  color: #334155;
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.compact-summary-box p {
+  margin-bottom: 5px;
+  color: #2f3b59;
+}
+
+.compact-summary-box ul {
+  padding-left: 18px;
+  margin-top: 2px;
+  margin-bottom: 6px;
+}
+
+.compact-summary-box li {
+  margin-bottom: 4px;
+}
+
+.compact-summary-box .nested-list {
+  margin-top: 2px;
+  margin-bottom: 0;
+  list-style-type: circle;
+}
+
+.compact-summary-section {
+  margin-bottom: 0 !important;
+}
+
+/* --- Sample Report Button --- */
+.sample-report-btn {
+  background: transparent;
+  color: #2563eb;
+  border: 1px solid #2563eb;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.sample-report-btn:hover {
+  background: #2563eb;
+  color: white;
+}
+
+.template-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.template-card p {
+  flex-grow: 1;
+}
+
+/* =========================
+   REPORT
+========================= */
+
+.report-output-header{
+  text-align:center;
+  margin-bottom:10px;
+}
+
+.report-output-header h1{
+  font-size:20px;
+  color:#122d7b;
+
+  margin-bottom:10px;
+}
+
+.report-output-header p{
+  font-size:14px;
+  color:#555;
+
+  margin-bottom:4px;
+}
+
+.report-divider{
+  margin:16px 0;
+  border:none;
+  border-top:1px solid #ddd;
+}
+
+.report-section{
+  margin-bottom:16px;
+}
+
+.report-section h3{
+  font-size:20px;
+  color:#0e256b;
+
+  margin-bottom:10px;
+}
+
+.report-section li{
+  margin-bottom:8px;
+  line-height:1.6;
+}
+
+.custom-prompt-echo{
+  background:#f4f7ff;
+
+  border-left:4px solid #0e256b;
+
+  padding:10px 14px;
+
+  border-radius:6px;
+
+  margin-bottom:10px;
+
+  font-size:14px;
+}
+
+/* =========================
+   TABLE
+========================= */
+
+.report-data-table{
+  width:100%;
+  border-collapse:collapse;
+}
+
+.report-section h3{
+  font-size:15px;
+  color:#1a009a;
+  margin-bottom:8px;
+}
+
+.report-section-p{
+  font-size:14px;
+  color:#555;
+
+  margin-bottom:4px;
+}
+
+.report-data-table th{
+  background:#0e256b;
+  color:white;
+  padding:12px;
+  text-align:left;
+  font-size:14px;
+}
+
+.report-data-table td{
+  border:1px solid #ddd;
+  padding:12px;
+  font-size:12px;
+}
+
+.report-data-table tr:nth-child(even){
+  background:#f7f9fc;
+}
+
+.report-ai-note{
+  margin-top:16px;
+  text-align:center;
+  font-size:12px;
+  color:#777;
+  border-top:1px solid #e1e1e1;
+  padding-top:10px;
+}
+
+/* ==========================================================================
+   UNIFIED LAYOUT FOR TABLEWISE & CUSTOM TEMPLATES (Matches Summarised Box)
+   ========================================================================== */
+
+.custom-modal-width .report-section,
+.tablewise-modal-width .report-section {
+  background: #fafafa;
+  padding: 5px;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+  color: #334155;
+  line-height: 1.6;
+  font-size: 14px;
+  text-align: left;
+  margin-bottom: 16px;
+}
+
+/* =========================
+   COMPACT TABLE REPORT (Removes Scrollbar)
+========================= */
+
+.report-data-table th,
+.report-data-table td {
+  padding: 8px 12px ;
+}
+
+.report-section {
+  margin-bottom: 12px;
+}
+
+.report-section h3 {
+  margin-bottom: 6px ;
+}
+
+.blurred-background{
+  filter:blur(3px);
+  pointer-events:none;
+}
+
+.modal-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+  background: transparent;
+  margin: 10px 0;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 5px;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* =========================
+   REDUCE MODAL WHITE SPACE
+========================= */
+
+.modal-content {
+  padding: 16px 24px 12px 24px !important;
+}
+
+.report-output-header h1 {
+  margin-top: 0 !important;
+}
+
+.report-ai-note {
+  margin-top: 12px !important;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width:768px){
+
+  .dashboard-controls-row{
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .field-group{
+    width:100%;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:6px;
+  }
+
+  .field-group label{
+    min-width:unset;
+    width:100%;
+  }
+
+  .field-group input,
+  .field-group select{
+    width:100%;
+  }
+
+  .time-save-row{
+    flex-wrap:wrap;
+    gap:10px;
+  }
+
+  .time-save-row input{
+    width:100% !important;
+  }
+
+  .save-button,
+  .execute-now-button{
+    width:100%;
+  }
+
+  .workflow-section{
+    width:100%;
+    justify-content:center;
+    margin-top:10px;
+  }
+
+  .template-wrapper{
+    flex-direction:column;
+  }
+
+  .dashboard-title{
+    font-size:18px;
+  }
+
+  .modal-content{
+    width:95%;
+  }
+}
+.toast{
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 14px 20px;
+  color: white;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  z-index: 9999;
+  animation: toastFade 4s forwards;
+}
+
+.toast.success{
+  background:#16a34a;
+}
+
+.toast.error{
+  background:#dc2626;
+}
+
+@keyframes toastFade{
+  0%{
+    opacity:0;
+    transform:translateY(-15px);
+  }
+
+  10%,80%{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+  100%{
+    opacity:0;
+    transform:translateY(-15px);
+  }
+}
+/* ==========================================================================
+   VISUAL DROPDOWN OVERLAY OVERRIDES (S2 & S3 Text Injection Via Parent Labels)
+   ========================================================================== */
+
+/* Turn parent wrapper containing S2 select options into a fixed coordinate container */
+.s2-dropdown {
+  position: relative !important;
+}
+/* Mask native selected label text inside select menu */
+.s2-dropdown select {
+  color: transparent !important;
+  text-indent: -9999px !important;
+}
+/* Inject P4 & P5 placeholder texts over it */
+.s2-dropdown::after {
+  content: "p4, p5" !important;
+  position: absolute !important;
+  left: 12px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  color: #334155 !important;
+  font-size: 14px !important;
+  pointer-events: none !important;
+}
+
+/* Repeat same relative wrapper layer trick for S3 field box */
+.s3-dropdown {
+  position: relative !important;
+}
+.s3-dropdown select {
+  color: transparent !important;
+  text-indent: -9999px !important;
+}
+.s3-dropdown::after {
+  content: "p6, p7, p8, p9" !important;
+  position: absolute !important;
+  left: 12px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  color: #334155 !important;
+  font-size: 14px !important;
+  pointer-events: none !important;
+}
+
+@media (max-width:480px){
+
+  .dashboard-title{
+    font-size:18px;
+  }
+
+  .logout-button{
+    width:100%;
+  }
+
+  .login-card{
+    width:100%;
+    margin:20px auto;
+    padding:20px;
+  }
+
+  .modal-content{
+    width:98%;
+    padding:14px;
+  }
+
+  .workflow-label{
+    font-size:13px;
+  }
+}
+@keyframes modalFadeIn {
+  from { 
+    opacity: 0; 
+    transform: translateY(-10px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+.input-error{
+
+    border:0.5px solid #dc2626 !important;
+
+    background:#fff5f5;
+
+    transition:.2s;
+}
+/* Disabled Buttons */
+
+button:disabled{
+    opacity:0.65;
+    cursor:not-allowed;
+    transform:none;
+}
+
+/* Small Spinner */
+
+.button-spinner{
+    width:14px;
+    height:14px;
+    border:2px solid rgba(255,255,255,.4);
+    border-top:2px solid white;
+    border-radius:50%;
+    display:inline-block;
+    margin-right:8px;
+    animation:buttonSpin .7s linear infinite;
+    vertical-align:middle;
+}
+
+@keyframes buttonSpin{
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+/* =========================
+   Workflow History Cards
+========================= */
+.workflow-item{
+    padding:12px;
+    border-bottom:1px solid #e5e7eb;
+    font-size:13px;
+    color:#334155;
+    white-space:normal;
+    word-break: break-word;
+    line-height: 1.5;
+    transition:.2s;
+}
+
+.workflow-item:hover{
+    background:#f4f7ff;
+}
+
+.workflow-agent{
+    font-weight:700;
+    color:#163491;
+}
+
+.workflow-separator{
+    color:#94a3b8;
+}
+/* Empty Workflow State */
+.empty-workflow{
+    padding:10px 8px;
+    text-align:center;
+}
+.empty-title{
+    font-size:15px;
+    font-weight:500;
+    color:#163491;
+    margin-bottom:4px;
+}
+
+.field-group input:focus,
+.field-group select:focus,
+.email-section input:focus,
+.template-card textarea:focus,
+.login-field input:focus{
+
+    border-color:#6685e4;
+    box-shadow:0 0 0 1px rgba(22,52,145,.15);
+}
+.agent-history{
+    animation:dropdownFade .2s ease;
+}
+
+@keyframes dropdownFade{
+    from{
+        opacity:0;
+        transform:translateY(-6px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}

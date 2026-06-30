@@ -1,0 +1,6 @@
+{
+  "llama 3": "llama3",
+  "llama 3.2": "llama3.2",
+  "qwen 3": "qwen3:8b",
+  "phi 4": "phi4-mini"
+}

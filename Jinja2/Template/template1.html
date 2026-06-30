@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+    <p><b>Dear Plant Manager,</b></p>
+
+    <h2 style="color:#003366;">
+        Weekly Highlights Report for {{ plantName }}
+    </h2>
+
+    <p>
+        <b>Week Ending:</b> {{ weekEnding }}
+    </p>
+
+    {{ content | safe }}
+
+    <hr>
+
+    <p>
+        <i>
+            Note: This report was generated automatically by AI using {{modelName}}.
+        </i>
+    </p>
+
+</body>
+</html>

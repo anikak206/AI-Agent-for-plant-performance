@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+
+    <p><b>Dear Plant Manager,</b></p>
+
+    <h3 style="color:#003366;">
+        Key Observations
+    </h3>
+
+    <p>
+        {{ observations }}
+    </p>
+    
+    <h3 style="color:#003366;">
+        {{ plantName }} Weekly Performance Report
+    </h3>
+
+    <table border="1" cellspacing="0" cellpadding="8" style="border-collapse:collapse;width:600px;">
+
+        <tr style="background-color:#003366;color:white;">
+            <th>KPI</th>
+            <th>Result</th>
+        </tr>
+
+        {% for row in tableRows %}
+        <tr>
+            <td>{{ row.key }}</td>
+            <td>{{ row.value }}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+    
+    <br>
+
+    <hr>
+
+    <p>
+        <i>
+            Note: This report was generated automatically by AI using {{modelName}}.
+        </i>
+    </p>
+
+</body>
+
+</html>

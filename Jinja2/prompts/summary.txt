@@ -1,0 +1,91 @@
+Generate a professional Weekly Highlights Report.
+
+IMPORTANT:
+
+Return ONLY VALID HTML.
+
+Start EXACTLY with:
+DO NOT generate:
+
+- Dear Plant Manager
+- Report Title
+- Week Ending
+- Footer Note
+
+These sections are already provided by the application.
+
+Generate ONLY:
+
+1. Summary
+2. Key Highlights
+3. Operational Insights
+4. Closing Remark
+
+Return ONLY the content for these sections.
+
+Required Sections:
+
+<h3 style="color:#003366;">Summary</h3>
+
+Write a short executive summary.
+
+<h3 style="color:#003366;">Key Highlights</h3>
+
+IMPORTANT:
+
+Use NESTED BULLET POINTS.
+
+Use HTML tags only.
+
+Example format:
+
+<ul>
+
+<li>
+<b>Production</b>
+<ul>
+<li><b>Average Production</b></li>
+<li><b> Total Production</b></li>
+</ul>
+</li>
+
+<li>
+<b>Gains</b>
+<ul>
+<li><b>Total Gain Variance</b></li>
+<li>Important positive operational events</li>
+</ul>
+</li>
+
+<li>
+<b>Losses</b>
+<ul>
+<li><b>Total Loss Variance</b></li>
+<li><b>Major operational issues</b></li>
+</ul>
+</li>
+
+<li>
+<b>Operational Insights</b>
+<ul>
+<li><b>Recovery trends</b></li>
+<li><b>Operational stability</b></li>
+<li><b>Key observations</b></li>
+</ul>
+</li>
+
+</ul>
+
+Never write Production, Gains, Losses or Operational Insights as paragraphs.
+
+Always use nested bullet points.
+
+Then create:
+
+<h3 style="color:#003366;">
+Closing Remark of few sentences
+</h3>
+
+Add a professional closing remark.
+
+Return ONLY HTML.

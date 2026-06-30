@@ -1,0 +1,16 @@
+{
+  "summary": {
+    "template": "template1.html",
+    "prompt": "summary.txt"
+  },
+
+  "tablewise": {
+    "template": "template2.html",
+    "prompt": "tablewise.txt"
+  },
+
+  "custom": {
+    "template": "template3.html",
+    "prompt": "custom.txt"
+  }
+}

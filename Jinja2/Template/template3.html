@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f5f7fa;
+    padding:20px;
+    color:#333;
+}
+
+.container{
+    max-width:1000px;
+    margin:auto;
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+.subject{
+    font-size:18px;
+    margin-bottom:20px;
+}
+
+.title{
+    text-align:center;
+    font-size:28px;
+    font-weight:bold;
+    color:#003366;
+    margin-bottom:25px;
+}
+
+.section-title{
+    font-size:20px;
+    font-weight:bold;
+    color:#003366;
+    margin-top:25px;
+    margin-bottom:10px;
+}
+
+.directive-box{
+    background:#f8fafc;
+    border-left:4px solid #003366;
+    padding:15px;
+    margin-bottom:20px;
+}
+
+.content{
+    line-height:1.8;
+}
+
+.closing{
+    margin-top:30px;
+    background:#f8fafc;
+    padding:15px;
+    border-radius:8px;
+}
+
+.footer{
+    margin-top:30px;
+    text-align:center;
+    color:#666;
+    font-size:12px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="subject">
+        <strong>Subject:</strong>
+        Weekly Highlight Report for {{ plant_name }} - Powered by Generative AI
+    </div>
+
+    <div class="title">
+        Weekly Highlights Report for {{ plant_name }} Plant
+    </div>
+
+    <div class="section-title">
+        Custom Prompt Parameters
+    </div>
+
+    <div class="directive-box">
+        <strong>Directive Applied:</strong>
+        {{ custom_prompt }}
+    </div>
+
+    <div class="section-title">
+        Report Summary
+    </div>
+
+    <div class="content">
+        {{ report_body | safe }}
+    </div>
+
+    <div class="section-title">
+        Closing Remark
+    </div>
+
+    <div class="closing">
+        {{ closing_remark | safe }}
+    </div>
+
+    <div class="footer">
+        NOTE: Generated via AI {{ modelName }}
+    </div>
+
+</div>
+
+</body>
+</html>

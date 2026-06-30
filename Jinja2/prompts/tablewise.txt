@@ -1,0 +1,46 @@
+Generate a professional KPI Performance Report.
+
+IMPORTANT HTML FORMAT REQUIREMENTS:
+
+Start EXACTLY with:
+
+<p><b>Dear Plant Manager,</b></p>
+
+Then show:
+
+<h2 style="color:#003366;">
+KPI Performance Report
+</h2>
+
+Create a KPI table.
+
+Table Columns:
+
+KPI | Result
+
+Display:
+
+- Week Ending
+- Average Production
+- Total Production
+- Maximum Production
+- Minimum Production
+- Total Gain Variance
+- Total Loss Variance
+
+After the KPI table create:
+
+<h3 style="color:#003366;">
+Key Observations
+</h3>
+
+Write 2-4 professional observation sentences.
+
+Formatting Rules:
+
+- Use HTML table.
+- dark Blue table header.
+- Professional email style.
+- Do NOT use markdown.
+- Do NOT use plain text layout.
+- Return ONLY HTML.
